@@ -23,9 +23,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> readAllUser() {
-        TypedQuery<User> query = em.createQuery("SELECT u FROM User u", User.class);
-        return query.getResultList();
+        return em.createQuery("FROM User", User.class).getResultList();
     }
+
 
     @Override
     public User readUserById(Long id) {
@@ -39,7 +39,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void deleteUserById(Long id) {
-        em.remove(em.find(User.class, id));
+        User user = em.find(User.class, id);
+        if (user != null) {
+            em.remove(user);
+        }
     }
 
 
