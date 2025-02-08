@@ -3,27 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit User</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #000000;
+            color: white;
+        }
+
+        .container {
+            background-color: #333333;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            color: white;
+        }
+
+        .form-control {
+            background-color: #444444;
+            border: 1px solid #555555;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .form-control:focus {
+            background-color: #555555;
+            border-color: #007bff;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6368;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5">
     <h2>Edit User</h2>
     <form th:action="@{/edit}" method="post" th:object="${user}">
-        <input type="hidden" th:field="@{id}" />
+        <input type="hidden" th:field="*{id}" />
 
         <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" th:field="@{name}" required>
+            <input type="text" class="form-control" id="firstName" th:field="*{name}" required>
         </div>
 
         <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" th:field="@{lastname}" required>
+            <input type="text" class="form-control" id="lastName" th:field="*{last_name}" required>
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" th:field="@{email}" required>
+            <input type="email" class="form-control" id="email" th:field="*{email}" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Save</button>

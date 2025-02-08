@@ -8,6 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #000000;
+            color: white;
         }
 
         table {
@@ -23,12 +25,11 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #333333;
         }
 
         .button {
-            background-color: #4CAF50;
-            border: none;
+            background-color: #007bff;
             color: white;
             padding: 10px 15px;
             text-align: center;
@@ -37,15 +38,15 @@
             font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
+            border-radius: 5px;
         }
 
         .button:hover {
-            background-color: #000cf1;
+            background-color: #0056b3;
         }
 
         .buttonAdd {
-            background-color: #4CAF50;
-            border: none;
+            background-color: #007bff;
             color: white;
             padding: 10px 15px;
             text-align: center;
@@ -54,23 +55,22 @@
             font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
-            background: chartreuse;
-            position: relative;
-            left: 10px;
+            border-radius: 5px;
         }
 
         .buttonAdd:hover {
-            background-color: #000cf1;
+            background-color: #0056b3;
         }
+
     </style>
 </head>
 <body>
-<table border="1">
+<table>
     <thead>
     <tr>
-        <th>Id</th>>
+        <th>Id</th>
         <th>Name</th>
-        <th>last_name</th>
+        <th>Last Name</th>
         <th>Email</th>
     </tr>
     </thead>
@@ -103,5 +103,6 @@
     <input type="text" id="updateId" name="id" title="Please enter a valid number." required/>
     <input type="submit" class="button" value="Update User"/>
 </form>
+
 </body>
 </html>
