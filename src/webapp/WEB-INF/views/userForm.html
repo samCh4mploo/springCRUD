@@ -61,14 +61,18 @@
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" th:field="*{name}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
         </div>
         <div class="form-group">
             <label for="last_name">Last Name</label>
             <input type="text" class="form-control" id="last_name" th:field="*{last_name}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('last_name')}" th:errors="*{last_name}"></small>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" th:field="*{email}" required>
+            <small class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+        </div>
         </div>
         <button type="submit" class="btn btn-primary">Accept</button>
     </form>
